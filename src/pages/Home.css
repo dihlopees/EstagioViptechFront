@@ -1,0 +1,19 @@
+.botão a {
+    background: #0F4C81;
+    color: #fff;
+    text-decoration: none;
+    align-items: flex-end;
+    width: 200px;
+   
+}
+
+
+h1 {
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+}
+
+.inicio {
+    display:inline-flex;
+    
+}
