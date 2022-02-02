@@ -1,0 +1,38 @@
+.iconeRedondos button {
+    background: transparent;
+    border: 0;
+    
+   
+
+}
+.iconeRedondos button img {
+    background: transparent;
+    width: 50px;
+    border: 30px;
+
+}
+.iconeRedondos {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 100px;
+    padding: 30px;
+}
+
+.descrisãodositens h3 {
+    color: #0F4C81;
+}
+
+.quadradoGrande {
+    font-family: "Raleway", sans-serif;
+}
+
+.descrisãodositens p {
+    font-size: 10px;
+    
+}
+
+.descrisãodositens h2 {
+    font-size: 15px;
+}
+

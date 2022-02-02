@@ -1,0 +1,42 @@
+.botão a {
+    background: #0F4C81;
+    color: #fff;
+    text-decoration: none;
+    align-items: flex-end;
+    width: 200px;
+    font-size: 15px;
+    font-display: center;
+    
+   
+}
+
+.botão {
+    margin-right: 100px;
+}
+
+.porporlado{
+    width: 100%;
+}
+.icone {
+    width: 20px;
+}
+
+h1 {
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    padding-left: 100px;
+    padding-top: 0;
+}
+
+.inicio {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    padding-top: 45px;
+    
+   
+    
+}

@@ -1,0 +1,32 @@
+.campo {
+
+    width: 500px;
+    height: 62.5px;
+    
+}
+
+.quadro {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+    margin-left: 200px;
+    padding-top: 20px;
+
+}
+
+.botão {
+    background: #0F4C81;
+    color: #fff;
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+     
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+}
+
