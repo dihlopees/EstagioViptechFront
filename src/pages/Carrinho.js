@@ -17,7 +17,7 @@ export function Carrinho() {
       <Header />
 
       <br />
-      <nav>
+      <nav class="link">
         <br />
         <Link to="../">Home</Link>
         {"   >   "}

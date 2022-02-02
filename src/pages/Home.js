@@ -19,7 +19,7 @@ function Home() {
 
   const itensLista = lista.map((it) => (
     <ItemProduto
-      //img_url={props.img_url}
+      img_url={it.img_url}
       name={it.name}
       marca={it.marca}
       valor={it.valor}
@@ -29,10 +29,11 @@ function Home() {
   ));
 
   return (
-    <div className="Home">
+    <div>
       <Header />
 
       <nav class="inicio">
+
         <Button class="botão" variant="contained" size="large">
           <img src={Addicon} class="icone" alt="adicionar produto" />
           <Link to="../Cadastro">Adicionar Produto</Link>

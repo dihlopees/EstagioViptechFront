@@ -12,8 +12,11 @@ const ItemProduto = (props) => {
 
                      <div class="descrisãodositens">
                              <h2> {props.name}    </h2>
+                             <br/>
                              <p>  {props.marca}  </p>
+                             <br/>
                              <h3> {props.valor} </h3>
+                             <br/>
                              <p> {props.cor}      </p>
                     </div>
 

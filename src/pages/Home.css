@@ -2,24 +2,28 @@
     background: #0F4C81;
     color: #fff;
     text-decoration: none;
-    align-items: flex-end;
-    width: 200px;
+
     font-size: 15px;
-    font-display: center;
+    padding-top: 10px;
+    
     
    
 }
 
 .botão {
     margin-right: 100px;
+    min-height: 5vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
 
 .porporlado{
     width: 100%;
 }
-.icone {
-    width: 20px;
-}
+
 
 h1 {
     font-family: 'Raleway',sans-serif;
@@ -37,6 +41,12 @@ h1 {
     justify-content: right;
     padding-top: 45px;
     
-   
+}
+
+.inicio .botão img {
+    
+    width: 20px;
+    padding-right: 10px;
+    
     
 }

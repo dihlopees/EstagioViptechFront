@@ -2,6 +2,7 @@ import Header from "../componentes/header/header.js";
 import {Link} from 'react-router-dom';
 import TextField from "@mui/material/TextField";
 import {Button } from '@mui/material'
+import AddFoto from "../imagens/icone-adicionar-foto.svg";
 import "./Cadastro.css";
 
 export function Cadastro() {
@@ -9,15 +10,18 @@ export function Cadastro() {
     <div>
       <Header />
       <br/>
-        <nav>
+        <nav class="link">
         <br/>
         <Link to="../">Home</Link>
            {"   >  "} 
         <Link to="../Cadastro">Adicionar Produto</Link>
         </nav>
 
+        <h2 class="h">Adicionar Produtos</h2>
+
+
       <div class="quadro">
-        <h2>Adicionar Produtos</h2>
+      
         <form >
           <TextField
             className="campo"
@@ -43,6 +47,7 @@ export function Cadastro() {
           <TextField
             className="campo"
             id="outlined-basic"
+            select
             label="Cor"
             variant="outlined"
           />
@@ -52,12 +57,20 @@ export function Cadastro() {
             id="outlined-basic"
             label="Data do Cadastro"
             type="date"
+            placeholder="none"
             variant="outlined"   
+            InputLabelProps={
+              {
+                shrink: true,
+              }
+            }
           />
           <br/>
           <br/>
           <br/>
-          <input class="addimg" type="file" onClick="{abrirfoto}"/>        
+          <input class="addimg" type="file" onClick="{abrirfoto}" />   
+          <img src={AddFoto} alt="adicionar foto"/>
+
            
            <br/>
            <br/>
