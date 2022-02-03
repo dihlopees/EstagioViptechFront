@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../componentes/header/header.js";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import Addicon from "../imagens/addicone.svg";
 import ItemProduto from "../componentes/item-produto/itemProduto.js";
-import dados from "../api.js";
+import api from "../api";
 import "./Home.css";
 
 
@@ -15,16 +15,32 @@ function Home() {
   //os buttons ja vao ser linkados com as paginas... fazer link to carrinho. e editar.
 
   //aqui no home em cima fazer o data state, que puxa do api faço .map com props
-  const [lista, setLista] = useState(dados);
+
+
+
+  const [lista, setLista] = useState([]);
+
+  useEffect(() => {
+    api
+      .get("/produtos")
+      .then((response) => setLista(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+  }, []);
+
+  //criar uma função para ficar dentro do meu onclick e essa função é tudo o que esta em api.
+
 
   const itensLista = lista.map((it) => (
     <ItemProduto
-      img_url={it.img_url}
-      name={it.name}
+      img_url={it.imagem}
+      name={it.nome}
       marca={it.marca}
       valor={it.valor}
-      cor={it.cor}
+      cor={it.corId}
       id={it.id}
+      key={it.id}
       />
   ));
 
