@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 
+
 import Home from "./pages/Home";
 import {Cadastro} from "./pages/Cadastro";
-import {Carrinho} from "./pages/Carrinho";
+import {Produtos} from "./pages/Produtos";
 import {Editar} from "./pages/Editar";
 
 const Rota = () => {
@@ -12,7 +13,7 @@ const Rota = () => {
         <Routes>
         <Route element = {<Home/>} path="/" exact/>
         <Route element= {<Cadastro/>} path="cadastro" />
-        <Route element={<Carrinho/>} path="carrinho"/>
+        <Route element={<Produtos/>} path="produtos/:id"/>
         <Route element={<Editar/>} path="editar"/>
         </Routes>
         </BrowserRouter>

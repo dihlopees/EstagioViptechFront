@@ -1,5 +1,27 @@
-h1 {
+.cardTitulos h1 {
     display: flex;
-    flex-direction: column;
-    justify-content: right;
+    flex-direction:row;
+    
+}
+
+.quantidade button {
+    background: transparent;
+    border: 0;
+    width: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.quantidade button img {
+    
+    width: 40px;
+}
+
+.quantidade p {
+
+    border: 15px black;
+    width: 50px;
+    
 }

@@ -31,14 +31,16 @@ function Home() {
 
   //criar uma função para ficar dentro do meu onclick e essa função é tudo o que esta em api.
 
+  console.log(lista);
 
   const itensLista = lista.map((it) => (
+   
     <ItemProduto
       img_url={it.imagem}
       name={it.nome}
       marca={it.marca}
       valor={it.valor}
-      cor={it.corId}
+      cor={it.cor.nome}
       id={it.id}
       key={it.id}
       />
