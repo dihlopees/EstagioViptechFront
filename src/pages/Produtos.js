@@ -8,35 +8,27 @@ import "./Carrinho.css";
 import UnicoItem from "../componentes/itemCarrinho.js/itemCarrinho.js";
 
 export function Produtos() {
-
   const [count, setCount] = useState(1);
   const [item, setItem] = useState([]);
 
-
- const { id } = useParams()
- console.log(id)
+  const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
-    trazerCompra()
+    trazerCompra();
   }, []);
 
-
   function trazerCompra() {
-
     api
       .get("/produtos/" + id)
-      .then((response) =>{
+      .then((response) => {
         setItem(response.data);
         console.log(response.data);
-      } )
+      })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
-    }
-
-
-
-
+  }
 
   function diminuir() {
     if (count > 1) {
@@ -71,43 +63,38 @@ export function Produtos() {
       </nav>
 
       <div class="cardTitulos">
-
-      <h1> Carrinho</h1>
-      <h1>Resumo do Pedido</h1>
-
+        <h1> Carrinho</h1>
       </div>
+
+
 
       
-     
 
       <div class="produto">
-     
-      {/* {produtoComprado} */}
-      <UnicoItem item={item}/>
-      </div>
+        {/* {produtoComprado} */}
+        <UnicoItem item={item} />
 
-      <hr/>
+        <hr id="hr"/>
 
-      <div class="quantidade">
+        <div class="quantidade">
+         <h3> Quantidade:</h3>
 
-
-        <h3> Quantidade:</h3>
-       
-        <button onClick={diminuir}>
+          <button onClick={diminuir}>
           <img src={Menos} alt="diminuir" />
-        </button>
+         </button>
 
-       
+        <p> {count} </p>
 
         <button onClick={() => setCount(count + 1)}>
-          
           <img src={Plus} alt="aumentar" />
         </button>
         <h2>R$ 300,00</h2>
+
+        </div>
       </div>
 
       <div class="cardresumo">
-        
+        <h1>Resumo do Pedido</h1>
       </div>
     </div>
   );

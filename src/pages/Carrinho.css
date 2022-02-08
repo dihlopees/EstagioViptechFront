@@ -21,7 +21,33 @@
 
 .quantidade p {
 
-    border: 15px black;
-    width: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+p {
     
+   text-align: center;
+   
+
+}
+
+.produto {
+    border: solid 1px #B2B2B2;
+    border-radius: 7px;
+    box-sizing: border-box;
+    margin: 100px;
+    width: 50%; 
+
+       
+
+}
+
+#hr {
+
+    margin: 30px;
+    border: 1px solid #D9D9D9;
 }
