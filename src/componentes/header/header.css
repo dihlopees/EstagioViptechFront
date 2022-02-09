@@ -1,5 +1,8 @@
   *{
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
     margin:0;
+    color: #353535;
   }
   .App-header {
     background-color: #00264B;

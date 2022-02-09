@@ -1,0 +1,19 @@
+.quadradocompras h2 {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.quadradocompras p {
+  font-size: 15px;
+}
+
+.quadradocompras {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.quadradocompras img {
+  width: 80px;
+  margin-left: 15px;
+}
