@@ -6,11 +6,11 @@ const UnicoItem = (props) => {
     <div class="quadradocompras">
       <img src={props.item.imagem} alt="imagemdoproduto" />
 
-      <div class="descrisãodositens">
+      <div class="descrisaodositens">
         <h2> {props.item.nome} </h2>
-        <br />
+        
         <p> {props.item.marca} </p>
-        <br />
+        
         <p> cor: {props.item.corId} </p>
       </div>
     </div>

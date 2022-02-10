@@ -6,6 +6,7 @@ import Menos from "../imagens/iconecarrinho-menos.svg";
 import Plus from "../imagens/iconecarrinho-mais.svg";
 import api from "../api";
 import "./Produtos.css";
+// import IconeFrete from "../imagens/IconeFrete.svg";
 import UnicoItem from "../componentes/itemCarrinho.js/itemCarrinho.js";
 
 export function Produtos() {
@@ -86,9 +87,12 @@ export function Produtos() {
       </nav>
 
       <div class="divtodos">
-        <h1 id="titulo"> Carrinho</h1>
+        
 
-        <div class="produto">
+        <div class="produtoss">
+
+        <h1> Carrinho</h1>
+          <div class="produto">
           {/* {produtoComprado} */}
           <UnicoItem item={item} />
 
@@ -108,6 +112,7 @@ export function Produtos() {
             </button>
             <br />
             <h2>{conv(parseFloat(item.valor))}</h2>
+            </div>
           </div>
         </div>
 
@@ -115,7 +120,7 @@ export function Produtos() {
           <h1>Resumo do Pedido</h1>
 
           <div class="contas">
-            <p>Subtotal (1 item) {conv(somaPreco())}</p>
+            <p>Subtotal ({count} item) {conv(somaPreco())}</p>
             <br />
             <hr class="linha" />
             <p>Frete {conv(frete())}</p>
@@ -124,9 +129,11 @@ export function Produtos() {
             <p>Valor Total {conv(somaTotal())}</p>
             <br/>
             
-            <Button class="botão" variant="contained" size='small' >
-            Pagar
+            <Button class="botao" variant="contained" size='small' >
+            PAGAR
           </Button>
+          <br/>   
+
           </div>
         </div>
       </div>

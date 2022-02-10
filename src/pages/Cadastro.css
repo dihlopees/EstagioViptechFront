@@ -54,11 +54,14 @@ form .campo {
     margin-left: 200px;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 30px;
-    
+    color: #0F4C81;
 }
+    
+
 
 .link a{
     text-decoration: none;
     font-size: 13px;
+    color: #0F4C81;
 }
 
