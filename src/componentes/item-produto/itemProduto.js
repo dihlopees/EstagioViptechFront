@@ -21,6 +21,7 @@ const ItemProduto = (props) => {
     api
     .delete("/produtos/" + id)
     .then(function (response) {
+        window.location.reload(true);
         console.log(response);
       })
     .catch((err) => {
