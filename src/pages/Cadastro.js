@@ -86,6 +86,7 @@ export function Cadastro() {
     corid: cor,
   })
   .then(function (response) {
+    window.location.replace('/')
     console.log(response);
   })
   .catch(function (error) {

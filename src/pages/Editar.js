@@ -11,7 +11,7 @@ import AddFoto from "../imagens/icone-adicionar-foto.svg";
 import "./Cadastro.css";
 
 export function Editar() {
-  const [cor, setCor] = useState();
+  const [cor, setCor] = useState(0);
   const [nome, setNome]= useState("");
   const [marca, setMarca]= useState("");
   const [imagem, setImagem]= useState("");
@@ -73,7 +73,7 @@ export function Editar() {
         setNome(response.data.nome);
         setMarca(response.data.marca);
         setValor(response.data.valor);
-        setCor(response.data.cor.nome);
+        setCor(response.data.cor.id);
         setData(response.data.data);
         setImagem(response.data.imagem);
 
@@ -99,6 +99,7 @@ export function Editar() {
     corid: cor,
   })
   .then(function (response) {
+    window.location.replace('/')
     console.log(response);
   })
   .catch(function (error) {
@@ -106,8 +107,7 @@ export function Editar() {
   });
   };
 
-
-
+  console.log(itCor)
   return (
     <div>
       <Header />
@@ -159,9 +159,10 @@ export function Editar() {
               value={cor}
               onChange={opcoesCor}
             >
-              {itCor.map((it) => (
+              {itCor.map((it) => {
+                return (
                 <MenuItem value={it.id}>{it.nome}</MenuItem>
-              ))}
+              )})}
             </Select>
           </FormControl>
           <br />
