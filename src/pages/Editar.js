@@ -97,6 +97,8 @@ export function Editar() {
     valor: valor,
     data: data,
     corid: cor,
+    imagem: imagem,
+
   })
   .then(function (response) {
     window.location.replace('/')
@@ -182,8 +184,9 @@ export function Editar() {
           <br />
           <br />
           <br />
-          <input class="addimg" type="file" onClick="{abrirfoto}" />
+          <input class="addimg" type="file"  />
           <img src={AddFoto} alt="adicionar foto" />
+          {/* <input type="file" ><img src={imagem} alt="imagem do produto" /></input> */}
           <br />
           <br />
           <br />
