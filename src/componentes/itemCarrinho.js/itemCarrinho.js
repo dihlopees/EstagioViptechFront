@@ -2,16 +2,22 @@ import React from "react";
 import "./itemCarrinho.css";
 
 const UnicoItem = (props) => {
+
+ 
+
+  console.log(props);
+
+
   return (
     <div class="quadradocompras">
-      <img src={props.item.imagem} alt="imagemdoproduto" />
+      <img src={props.img_url} alt="imagemdoproduto" />
 
       <div class="descrisaodositens">
-        <h2> {props.item.nome} </h2>
+        <h2> {props.name} </h2>
         
-        <p> {props.item.marca} </p>
+        <p> {props.marca} </p>
         
-        <p> cor: {props.item.corId} </p>
+        <p> cor: {props.cor} </p>
       </div>
     </div>
   );

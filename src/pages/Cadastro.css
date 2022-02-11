@@ -1,7 +1,7 @@
 form .campo {
 
     width: 500px;
-    height: 62.5px;
+   
     margin-top: 15px;
     
 }
@@ -41,6 +41,9 @@ form .campo {
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 15px;
+   padding-top: 10px;
+   margin-bottom: 15px;
      
 }
 
@@ -57,7 +60,9 @@ form .campo {
     color: #0F4C81;
 }
     
-
+.quadro .botão a {
+    font-size: 5px;
+}
 
 .link a{
     text-decoration: none;

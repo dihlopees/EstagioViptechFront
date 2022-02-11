@@ -12,6 +12,7 @@ import UnicoItem from "../componentes/itemCarrinho.js/itemCarrinho.js";
 export function Produtos() {
   const [count, setCount] = useState(1);
   const [item, setItem] = useState([]);
+  const[ valorproduto, setValorproduto] = useState(0);
   let soma = 0;
   let resultado = 0;
   let total = 0;
@@ -34,8 +35,11 @@ export function Produtos() {
     api
       .get("/produtos/" + id)
       .then((response) => {
-        setItem(response.data);
-        console.log(response.data);
+        setItem([response.data]);
+        setValorproduto(parseFloat(response.data.valor));
+        
+        
+        
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
@@ -49,7 +53,7 @@ export function Produtos() {
   }
 
   function somaPreco() {
-    return (soma = item.valor * count);
+    return (soma = valorproduto * count);
   }
 
   function frete() {
@@ -60,19 +64,23 @@ export function Produtos() {
     return (total = soma + resultado);
   }
 
-  // const produtoComprado = item.map((it) => (
-  //   <UnicoItem
-  //     img_url={it.imagem}
-  //     name={it.nome}
-  //     marca={it.marca}
-  //     valor={it.valor}
-  //     cor={it.cor}
-  //     id={it.id}
-  //     key={it.id}
-  //   />
-  // ));
+  console.log(item.valor);
 
-  console.log(item);
+  function produtoComprado() { 
+    return item.map((it) => (
+    <UnicoItem
+      img_url={it.imagem}
+      name={it.nome}
+      marca={it.marca}
+      valor={it.valor}
+      cor={it.cor.nome}
+      id={it.id}
+      key={it.id}
+    />
+  ));
+    };
+
+ 
 
   return (
     <div>
@@ -93,8 +101,8 @@ export function Produtos() {
 
         <h1> Carrinho</h1>
           <div class="produto">
-          {/* {produtoComprado} */}
-          <UnicoItem item={item} />
+          {produtoComprado()}
+          {/* <UnicoItem item={item} /> */}
 
           <hr id="hr" />
 
@@ -111,7 +119,7 @@ export function Produtos() {
               <img src={Plus} alt="aumentar" />
             </button>
             <br />
-            <h2>{conv(parseFloat(item.valor))}</h2>
+            <h2>{conv(valorproduto)}</h2>
             </div>
           </div>
         </div>

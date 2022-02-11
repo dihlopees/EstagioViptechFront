@@ -52,7 +52,7 @@ function Home() {
 
       <nav class="inicio">
 
-        <Button class="botão" variant="contained" size="large">
+        <Button class="botaoinicial" variant="contained" size="large">
           <img src={Addicon} class="icone" alt="adicionar produto" />
           <Link to="../Cadastro">Adicionar Produto</Link>
         </Button>

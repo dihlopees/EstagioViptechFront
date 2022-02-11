@@ -9,6 +9,34 @@
     
    
 }
+.botaoinicial a {
+    background: #0F4C81;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    
+    
+   
+}
+
+.botaoinicial {
+    background: #0F4C81;
+    color: #fff;
+    text-decoration: none;
+   font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    margin-right: 100px;
+    min-height: 5vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
 
 .botão {
     margin-right: 100px;
@@ -48,5 +76,14 @@
     width: 20px;
     padding-right: 10px;
     
+    
+}
+
+
+.inicio .botaoinicial img {
+    
+    width: 20px;
+    padding-right: 10px;
+    margin-top: 8px;
     
 }

@@ -3,6 +3,7 @@ import api from "../api";
 import Header from "../componentes/header/header.js";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
+import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import { Button, Select } from "@mui/material";
@@ -53,7 +54,8 @@ export function Cadastro() {
       marca,
       valor,
       data,
-      cor
+      cor,
+      imagem,
 
     }
   ];
@@ -80,8 +82,8 @@ export function Cadastro() {
     nome: nome,
     marca: marca,
     valor: valor,
-    datac: data,
-    corId: cor,
+    data: data,
+    corid: cor,
   })
   .then(function (response) {
     console.log(response);
@@ -106,7 +108,7 @@ export function Cadastro() {
       <h2 class="h">Adicionar Produtos</h2>
 
 
-     
+     {/* window.location.reload() */}
       <div class="quadro">
         <form>
           <TextField
@@ -134,11 +136,12 @@ export function Cadastro() {
             onChange={opcoesValor}
           />
           <br />
-          <InputLabel>Cor</InputLabel>
+          <FormControl sx={{width:"20ch"}}>
+          <InputLabel id="demo-simple-select-readonly-label">Cor</InputLabel>
           <Select
             className="campo"
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="demo-simple-select-readonly-label"
+            id="demo-simple-select-readonly"
             value={cor}
             onChange={opcoesCor}
             
@@ -150,7 +153,7 @@ export function Cadastro() {
            }
            
           </Select>
-          
+          </FormControl>
           <br />
           <TextField
             className="campo"
@@ -173,7 +176,7 @@ export function Cadastro() {
           <br />
           <br />
           <Button class="botão" variant="contained" size="large" onClick={() => enviandoBack()}>
-            Adicionar Produto
+            ADICIONAR PRODUTO
           </Button>
         </form>
       </div>
