@@ -12,7 +12,7 @@ import UnicoItem from "../componentes/itemCarrinho.js/itemCarrinho.js";
 export function Produtos() {
   const [count, setCount] = useState(1);
   const [item, setItem] = useState([]);
-  const[ valorproduto, setValorproduto] = useState(0);
+  const [valorproduto, setValorproduto] = useState(0);
   let soma = 0;
   let resultado = 0;
   let total = 0;
@@ -37,9 +37,6 @@ export function Produtos() {
       .then((response) => {
         setItem([response.data]);
         setValorproduto(parseFloat(response.data.valor));
-        
-        
-        
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
@@ -66,21 +63,60 @@ export function Produtos() {
 
   console.log(item.valor);
 
-  function produtoComprado() { 
+  function produtoComprado() {
     return item.map((it) => (
-    <UnicoItem
-      img_url={it.imagem}
-      name={it.nome}
-      marca={it.marca}
-      valor={it.valor}
-      cor={it.cor.nome}
-      id={it.id}
-      key={it.id}
-    />
-  ));
-    };
+      <UnicoItem
+        img_url={it.imagem}
+        name={it.nome}
+        marca={it.marca}
+        valor={it.valor}
+        cor={it.cor.nome}
+        id={it.id}
+        key={it.id}
+      />
+    ));
+  }
 
- 
+  function pagar() {
+    let resultado = total;
+    let sobra = 0;
+
+    if (resultado / 100 > 1) {
+      sobra = resultado - Math.floor(resultado / 100) * 100;
+
+      console.log("olha aqui:" + sobra);
+      console.log(Math.floor(resultado / 100) + "cédulas de R$100,00");
+    }
+    if (sobra / 50 > 1) {
+      console.log(Math.floor(sobra / 50) + "cedula de R$50,00");
+      sobra = sobra - Math.floor(sobra / 50) * 50;
+    }
+    if (sobra / 20 >= 1) {
+      console.log(Math.floor(sobra / 20) + "cedula de R$20,00");
+      sobra = sobra - Math.floor(sobra / 20) * 20;
+    }
+    if (sobra / 10 >= 1) {
+      console.log(Math.floor(sobra / 10) + "cedula de R$10,00");
+
+      sobra = sobra - Math.floor(sobra / 10) * 10;
+    }
+    if (sobra / 5 > 1) {
+      console.log(Math.floor(sobra / 5) + "cedula de R$5,00");
+      sobra = sobra - Math.floor(sobra / 5) * 5;
+    }
+    if (sobra / 2 >= 1) {
+      console.log(Math.floor(sobra / 2) + "cedula de R$2,00");
+      sobra = sobra - Math.floor(sobra / 2) * 2;
+    }
+
+    return (
+    
+    <div>
+      
+
+    </div>
+    );
+  }
 
   return (
     <div>
@@ -95,31 +131,28 @@ export function Produtos() {
       </nav>
 
       <div class="divtodos">
-        
-
         <div class="produtoss">
-
-        <h1> Carrinho</h1>
+          <h1> Carrinho</h1>
           <div class="produto">
-          {produtoComprado()}
-          {/* <UnicoItem item={item} /> */}
+            {produtoComprado()}
+            {/* <UnicoItem item={item} /> */}
 
-          <hr id="hr" />
+            <hr id="hr" />
 
-          <div class="quantidade">
-            <h3> Quantidade:</h3>
+            <div class="quantidade">
+              <h3> Quantidade:</h3>
 
-            <button onClick={diminuir}>
-              <img src={Menos} alt="diminuir" />
-            </button>
-            <br />
-            <p> {count} </p>
-            <br />
-            <button onClick={() => setCount(count + 1)}>
-              <img src={Plus} alt="aumentar" />
-            </button>
-            <br />
-            <h2>{conv(valorproduto)}</h2>
+              <button onClick={diminuir}>
+                <img src={Menos} alt="diminuir" />
+              </button>
+              <br />
+              <p> {count} </p>
+              <br />
+              <button onClick={() => setCount(count + 1)}>
+                <img src={Plus} alt="aumentar" />
+              </button>
+              <br />
+              <h2>{conv(valorproduto)}</h2>
             </div>
           </div>
         </div>
@@ -128,20 +161,26 @@ export function Produtos() {
           <h1>Resumo do Pedido</h1>
 
           <div class="contas">
-            <p>Subtotal ({count} item) {conv(somaPreco())}</p>
+            <p>
+              Subtotal ({count} item) {conv(somaPreco())}
+            </p>
             <br />
             <hr class="linha" />
             <p>Frete {conv(frete())}</p>
             <br />
             <hr class="linha" />
             <p>Valor Total {conv(somaTotal())}</p>
-            <br/>
-            
-            <Button class="botao" variant="contained" size='small' >
-            PAGAR
-          </Button>
-          <br/>   
+            <br />
 
+            <Button
+              class="botao"
+              variant="contained"
+              size="small"
+              onClick={pagar()}
+            >
+              PAGAR
+            </Button>
+            <br />
           </div>
         </div>
       </div>
