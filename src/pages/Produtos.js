@@ -77,42 +77,61 @@ export function Produtos() {
     ));
   }
 
-  function pagar() {
+  const Pagar = () => {
+
     let resultado = total;
     let sobra = 0;
+    let quant100 = ("");
+    let quant50 = ("");
+    let quant20 = ("");
+    let quant10 = ("");
+    let quant5 = ("");
+    let quant2 = ("");
 
+    
+    
     if (resultado / 100 > 1) {
       sobra = resultado - Math.floor(resultado / 100) * 100;
 
       console.log("olha aqui:" + sobra);
-      console.log(Math.floor(resultado / 100) + "cédulas de R$100,00");
+      quant100=(Math.floor(resultado / 100) + "  cédulas de R$100,00");
+      console.log(quant100);
     }
     if (sobra / 50 > 1) {
-      console.log(Math.floor(sobra / 50) + "cedula de R$50,00");
+
+      quant50=(Math.floor(sobra / 50) + "  cédulas de R$50,00");
       sobra = sobra - Math.floor(sobra / 50) * 50;
     }
     if (sobra / 20 >= 1) {
-      console.log(Math.floor(sobra / 20) + "cedula de R$20,00");
+      quant20=(Math.floor(sobra / 20) + "  cédulas de R$20,00");
       sobra = sobra - Math.floor(sobra / 20) * 20;
     }
     if (sobra / 10 >= 1) {
-      console.log(Math.floor(sobra / 10) + "cedula de R$10,00");
+      quant10=(Math.floor(sobra / 10) + "  cédulas de R$10,00");
 
       sobra = sobra - Math.floor(sobra / 10) * 10;
     }
     if (sobra / 5 > 1) {
-      console.log(Math.floor(sobra / 5) + "cedula de R$5,00");
+      quant5=(Math.floor(sobra / 5) + "  cédulas de R$5,00");
       sobra = sobra - Math.floor(sobra / 5) * 5;
     }
     if (sobra / 2 >= 1) {
-      console.log(Math.floor(sobra / 2) + "cedula de R$2,00");
+      quant2=(Math.floor(sobra / 2) + "  cédulas de R$2,00");
       sobra = sobra - Math.floor(sobra / 2) * 2;
-    }
+    };
 
     return (
     
-    <div>
-      
+    <div class="pagar">
+      <h3> Pagamento Realizado com Sucesso!</h3>
+
+      <h2> Este pagamento foi realizado com: </h2>
+      <p>{quant100}</p>
+      <p>{quant50}</p>
+      <p>{quant20}</p>
+      <p>{quant10}</p>
+      <p>{quant5}</p>
+      <p>{quant2}</p>
 
     </div>
     );
@@ -176,7 +195,7 @@ export function Produtos() {
               class="botao"
               variant="contained"
               size="small"
-              onClick={pagar()}
+              onClick={Pagar()}
             >
               PAGAR
             </Button>
@@ -184,6 +203,7 @@ export function Produtos() {
           </div>
         </div>
       </div>
+      <Pagar/>
     </div> //fim da div todos
   );
 }
