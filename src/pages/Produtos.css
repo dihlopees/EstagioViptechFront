@@ -40,7 +40,7 @@
   border-radius: 7px;
   margin-top: 50px;
   height: 300px;
-    width: 600px;
+  width: 600px;
 }
 
 #hr {
@@ -90,17 +90,16 @@
 }
 
 .botao {
-  background: #0F4C81;
+  background: #0f4c81;
   color: #fff;
   text-decoration: none;
- font-size: 12px;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 5px;
   width: 90%;
   height: 30px;
   text-align: center;
   letter-spacing: 1px;
- 
 }
 
 .contas .botao {
@@ -109,5 +108,11 @@
 }
 
 .pagar {
-  color: green;
+  color:green;
+  float: "right";
+  margin-right: "50px";
+  border: "1px solid #008000";
+  padding: "10px";
+  margin-bottom: "15px";
+  text-align: "center";
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import Header from "../componentes/header/header.js";
 import { Link, useParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import api from "../api";
 import "./Produtos.css";
 // import IconeFrete from "../imagens/IconeFrete.svg";
 import UnicoItem from "../componentes/itemCarrinho.js/itemCarrinho.js";
+import { display } from "@mui/system";
 
 export function Produtos() {
   const [count, setCount] = useState(1);
@@ -76,6 +77,13 @@ export function Produtos() {
       />
     ));
   }
+  const [display, setDisplay] = useState("none");
+
+  function sumirDiv() {
+
+   return setDisplay("block")
+
+  }
 
   const Pagar = () => {
 
@@ -120,18 +128,34 @@ export function Produtos() {
       sobra = sobra - Math.floor(sobra / 2) * 2;
     };
 
+   
+
     return (
     
-    <div class="pagar">
-      <h3> Pagamento Realizado com Sucesso!</h3>
+    <div className="pagar" style={{color: '#008000' , 
+    float: 'right',
+     marginRight: '100px' , 
+     border: '1px solid #008000' ,
+     padding: '10px',
+     marginBottom: '15px',
+     textAlign: 'center' ,
+     borderRadius: '7px',
+     display: display
+     }}>
 
-      <h2> Este pagamento foi realizado com: </h2>
-      <p>{quant100}</p>
-      <p>{quant50}</p>
-      <p>{quant20}</p>
-      <p>{quant10}</p>
-      <p>{quant5}</p>
-      <p>{quant2}</p>
+       {/* diplay: block mostra div... display none faz ela sumir */}
+
+
+      <h3 style={{color: '#008000', fontSize: '20px'}}> Pagamento Realizado com Sucesso!</h3>
+      <br/>
+      <p style={{color: '#008000', fontSize: '15px'}}  > Este pagamento foi realizado com: </p>
+      <br/>
+      <p style={{color: '#008000'}}  >{quant100}</p>
+      <p style={{color: '#008000'}}   >{quant50}</p>
+      <p style={{color: '#008000'}}  >{quant20}</p>
+      <p style={{color: '#008000'}}  >{quant10}   </p>
+      <p style={{color: '#008000'}} >{quant5}</p>
+      <p style={{color: '#008000'}}>{quant2}</p>
 
     </div>
     );
@@ -195,7 +219,7 @@ export function Produtos() {
               class="botao"
               variant="contained"
               size="small"
-              onClick={Pagar()}
+              onClick={() => sumirDiv()}
             >
               PAGAR
             </Button>
