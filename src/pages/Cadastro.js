@@ -110,6 +110,7 @@ export function Cadastro() {
     }))
   .then(function (response) {
     window.location.replace('/')
+    alert("Produto cadastrado com sucesso");
     console.log(response);
   })
   .catch(function (error) {

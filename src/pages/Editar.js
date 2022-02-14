@@ -103,6 +103,7 @@ export function Editar() {
   })
   .then(function (response) {
     window.location.replace('/')
+    alert("Produto editado com sucesso");
     console.log(response);
   })
   .catch(function (error) {
