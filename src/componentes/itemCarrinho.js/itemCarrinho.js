@@ -3,14 +3,14 @@ import "./itemCarrinho.css";
 
 const UnicoItem = (props) => {
 
- 
+  const tipo = "data:image/png;base64,";
 
   console.log(props);
 
 
   return (
     <div class="quadradocompras">
-      <img src={props.img_url} alt="imagemdoproduto" />
+      <img src={tipo + props.img_url} alt="imagemdoproduto" />
 
       <div class="descrisaodositens">
         <h2> {props.name} </h2>

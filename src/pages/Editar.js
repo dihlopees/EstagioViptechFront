@@ -5,6 +5,7 @@ import { Link , useParams} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from "@mui/material/MenuItem";
 import { Button, Select } from "@mui/material";
 import AddFoto from "../imagens/icone-adicionar-foto.svg";
@@ -145,13 +146,15 @@ export function Editar() {
           <br />
           <TextField
             className="campo"
-            id="outlined-basic"
-            label="Valor"
+            id="outlined-adornment-amount"
             variant="outlined"
             value={valor ??""}
             onChange={opcoesValor}
+            startAdornment={<InputAdornment position="start">R$</InputAdornment>}
+            label="Valor"
           />
           <br />
+          <br/>
           <FormControl sx={{ width: "20ch" }}>
             <InputLabel id="demo-simple-select-readonly-label">Cor</InputLabel>
             <Select

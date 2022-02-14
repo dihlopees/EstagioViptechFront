@@ -95,6 +95,7 @@ export function Produtos() {
     let quant10 = ("");
     let quant5 = ("");
     let quant2 = ("");
+    let quantRestante = ("");
 
     
     
@@ -126,7 +127,10 @@ export function Produtos() {
     if (sobra / 2 >= 1) {
       quant2=(Math.floor(sobra / 2) + "  cédulas de R$2,00");
       sobra = sobra - Math.floor(sobra / 2) * 2;
-    };
+    } if (sobra >0 ) {
+      quantRestante = ("Sobrou: R$    " +  sobra )
+    } 
+    
 
    
 
@@ -154,6 +158,7 @@ export function Produtos() {
       <p style={{color: '#008000'}}  >{quant10}   </p>
       <p style={{color: '#008000'}} >{quant5}</p>
       <p style={{color: '#008000'}}>{quant2}</p>
+      <p style={{color: '#008000'}}>{quantRestante}</p>
 
     </div>
     );

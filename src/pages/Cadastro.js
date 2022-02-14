@@ -160,6 +160,7 @@ export function Cadastro() {
             onChange={opcoesValor}
           />
           <br />
+          <br/>
           <FormControl sx={{width:"20ch"}}>
           <InputLabel id="demo-simple-select-readonly-label">Cor</InputLabel>
           <Select
