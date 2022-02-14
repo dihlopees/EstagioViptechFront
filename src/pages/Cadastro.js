@@ -104,7 +104,10 @@ export function Cadastro() {
     imagem: imagem,
     data: data,
     corid: cor,
-  })
+  },
+    api.post('produtos/upload', {
+      imagem: imagem,
+    }))
   .then(function (response) {
     window.location.replace('/')
     console.log(response);

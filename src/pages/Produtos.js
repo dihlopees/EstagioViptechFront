@@ -143,8 +143,6 @@ export function Produtos() {
      display: display
      }}>
 
-       {/* diplay: block mostra div... display none faz ela sumir */}
-
 
       <h3 style={{color: '#008000', fontSize: '20px'}}> Pagamento Realizado com Sucesso!</h3>
       <br/>

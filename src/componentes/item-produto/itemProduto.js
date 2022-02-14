@@ -11,7 +11,7 @@ const ItemProduto = (props) => {
   const ideditar = "../editar/" + props.id;
   
 
-  const tipo = `data:image/png;base64`;
+  const tipo = "data:image/png;base64,";
 
   function conv(numero) {
     return numero.toLocaleString("pt-br", {
