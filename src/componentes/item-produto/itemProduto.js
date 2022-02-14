@@ -9,6 +9,9 @@ import "./itemProduto.css";
 const ItemProduto = (props) => {
   const id = "../Produtos/" + props.id;
   const ideditar = "../editar/" + props.id;
+  
+
+  const tipo = `data:image/png;base64`;
 
   function conv(numero) {
     return numero.toLocaleString("pt-br", {
@@ -32,7 +35,7 @@ const ItemProduto = (props) => {
 
   return (
     <div class="quadradoGrande">
-      <img src={props.img_url} alt="imagemdoproduto" />
+      <img src={tipo + props.img_url} alt="imagemdoproduto" />
 
       <div class="descrisãodositens">
         <h2> {props.name} </h2>

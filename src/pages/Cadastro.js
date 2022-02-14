@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import api from "../api";
 import Header from "../componentes/header/header.js";
 import { Link } from "react-router-dom";
@@ -12,16 +12,16 @@ import "./Cadastro.css";
 
 export function Cadastro() {
 
-  const [cor, setCor] = React.useState();
-  const [nome, setNome]= React.useState("");
-  const [marca, setMarca]= React.useState("");
-  const [imagem, setImagem]= React.useState("");
-  const [valor, setValor]= React.useState();
-  const [data, setData]= React.useState();
+  const [cor, setCor] = useState();
+  const [nome, setNome]= useState("");
+  const [marca, setMarca]= useState("");
+  const [imagem, setImagem]= useState();
+  const [valor, setValor]= useState();
+  const [data, setData]= useState();
   //para pegar os dados e enviar para o banco temos que criar uma consts dessas pra cada um.
   //crio uma const para maperar o objeto.
   //crio uma constante para fazer setCor event.target.value e depois coloco no onchange.
-  const [itCor, setitCor] = React.useState([]);
+  const [itCor, setitCor] = useState([]);
 
   function opcoesNome(event) {
     setNome(event.target.value);
@@ -38,15 +38,34 @@ export function Cadastro() {
   const opcoesData = (event) => {
     setData(event.target.value);
   };
-  const opcoesImagem = (event) => {
-    setImagem(event.target.value);
-  };
+  // const opcoesImagem = (event) => {
+  //   setImagem(event.target.value);
+  // };
 
   const opcoesCor = (event) => {
     setCor(event.target.value);
   };
 
- 
+  function handleFile(event) {
+    transFileparaBase(event.target.files[0])
+   
+    
+    };
+
+    function transFileparaBase(file){
+      file.text().then(() => {
+        let reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+          const document = reader.result
+
+          setImagem(document.slice(document.lastIndexOf(",") + 1, document.length)) 
+          console.log(document.slice(document.lastIndexOf(",") + 1, document.length));
+        };
+
+
+      })
+    };
 
   const produto = [
     {
@@ -82,6 +101,7 @@ export function Cadastro() {
     nome: nome,
     marca: marca,
     valor: valor,
+    imagem: imagem,
     data: data,
     corid: cor,
   })
@@ -171,7 +191,7 @@ export function Cadastro() {
           <br />
           <br />
           <br />
-          <input class="addimg" type="file" onClick="{abrirfoto}" onChange={opcoesImagem} />
+          <input class="addimg" type="file"  onChange={handleFile} />
           <img src={AddFoto} alt="adicionar foto" />
           <br />
           <br />
